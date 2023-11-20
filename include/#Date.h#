@@ -10,7 +10,7 @@ class Date {
 		void setDay(int);
 		void setMonth(Month);
 		void setYear(int);
-		
+		                                             
 		int getDay(){return d;}
 		Month getMonth(){return m;}
 		int getYear(){return y;}
