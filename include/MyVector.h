@@ -8,7 +8,7 @@ public:
 	MyVector();
 	explicit MyVector(int);
 	MyVector(const MyVector&);
-	MyVector(initializer_list<double>);
+	MyVector(std::initializer_list<double>);
 	~MyVector();
 
 	
