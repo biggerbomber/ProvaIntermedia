@@ -14,6 +14,8 @@ Book::Book(const std::string& nomeAutore,
 	m_disponibile = true;
 }
 
+Book::Book(){}//non fa nulla i dati sono inizializzati ai valori di default definiti nel file helper
+
 bool Book::isIsbnValid(const std::string& isbn) {
 	return isbn.size() == 13;
 }
@@ -65,13 +67,13 @@ Book& Book::operator=(Book&& other) {
 
 void Book::presta(){
 	if (!m_disponibile) {
-		throw std::invalid_argument("Il libro non è disponibile!");
+		throw std::invalid_argument("Il libro non ï¿½ disponibile!");
 	}
 	m_disponibile = false;
 }
 void Book::restituito() {
 	if (m_disponibile) {
-		throw std::invalid_argument("Il libro non è stato prestato!");
+		throw std::invalid_argument("Il libro non ï¿½ stato prestato!");
 	}
 	m_disponibile = false;
 }

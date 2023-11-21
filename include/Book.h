@@ -14,6 +14,7 @@ public:
 	//Book(); //default
 	//Book(const std::string&); //ibsn
 	//Book(const std::string&, const std::string&); //titolo, ibsn
+	Book();
 	Book(const std::string&, const std::string&, const std::string&, const std::string&);//nome, cognome, titolo, ibsn
 	Book(const std::string&, const std::string&, const std::string&, const std::string&, Date);//nome, cognome, titolo, ibsn, copyright
 	
