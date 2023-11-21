@@ -1,6 +1,8 @@
 #ifndef _DATE_H
 #define _DATE_H
 
+bool is_leap(int);
+
 class Date {
 	public:
 		enum class Month{gennaio=1, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre};
