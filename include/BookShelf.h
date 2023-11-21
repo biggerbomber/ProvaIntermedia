@@ -1,8 +1,8 @@
 #ifndef _BOOKSHELF_H
 #define _BOOKSHELF_H
 
-#include "include/MyVector.h"
-#include "include/Book.h"
+#include "../include/MyVector.h"
+#include "../include/Book.h"
 
 class BookShelf{
 	

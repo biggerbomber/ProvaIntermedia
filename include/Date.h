@@ -2,8 +2,8 @@
 #define _DATE_H
 
 class Date {
-	private: enum class Month{Gennaio=1, Febbraio=2, Marzo=3, Aprile=4, Maggio=5, Giugno=6, Luglio=7, Agosto=8, Settembre=9, Ottobre=10, Novembre=11, Dicembre=12};
 	public:
+		enum class Month{gennaio=1, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre};
 		Date();
 		Date(int, Month, int);
 		

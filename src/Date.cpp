@@ -4,7 +4,7 @@ class Invalid{};
 
 Date::Date(){
 	y=2023;
-	m=Month::Novembre;
+	m=Month::gennaio;
 	d=20;
 }
 
@@ -30,7 +30,7 @@ void Date::setDay(int giorno){
 		throw Invalid();
 	}
 		
-	if(m==Month::Gennaio || m==Month::Marzo || m==Month::Maggio || m==Month::Luglio || m==Month::Agosto || m==Month::Ottobre || m==Month::Dicembre){
+	if(m==Month::gennaio || m==Month::marzo || m==Month::maggio || m==Month::luglio || m==Month::agosto || m==Month::ottobre || m==Month::dicembre){
 		if(giorno<=31){
 			d=giorno;
 		}
@@ -39,7 +39,7 @@ void Date::setDay(int giorno){
 		}
 	}
 	
-	if( m==Month::Aprile || m==Month::Giugno || m==Month::Settembre || m==Month::Novembre){
+	if( m==Month::aprile || m==Month::giugno || m==Month::settembre || m==Month::novembre){
 		if(giorno<=30){
 			d=giorno;
 		}
@@ -47,9 +47,21 @@ void Date::setDay(int giorno){
 			throw Invalid();
 		}
 	}
-	if(m==Month::Febbraio){
+	if(m==Month::febbraio){
 		if(y%4==0){
-			if(giorno<=29){
+			if(y%100==0){
+				if(y%400==0){
+					if(giorno<=29){
+					d=giorno;
+					}
+				}
+				else{
+					if(giorno<=28){
+					d=giorno;
+					}
+				}
+			}
+			else if(giorno<=29){
 			d=giorno;
 			}
 		}
