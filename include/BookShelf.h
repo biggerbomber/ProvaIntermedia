@@ -14,6 +14,6 @@ public:
 	Book pop_back();
 private:
 	MyVector m_books;
-}
+};
 
 #endif
