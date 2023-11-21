@@ -26,50 +26,26 @@ void Date::setMonth(Month mese){
 }
 
 void Date::setDay(int giorno){
-	if(giorno<0){
+	if(giorno<0 || giorno>31){
 		throw Invalid();
 	}
-		
-	if(m==Month::gennaio || m==Month::marzo || m==Month::maggio || m==Month::luglio || m==Month::agosto || m==Month::ottobre || m==Month::dicembre){
-		if(giorno<=31){
-			d=giorno;
-		}
-		else{
+	if(m==Month::febbraio && ((giorno>29)||(giorno>28 && !is_leap(y)))){
 			throw Invalid();
-		}
 	}
 	
-	if( m==Month::aprile || m==Month::giugno || m==Month::settembre || m==Month::novembre){
-		if(giorno<=30){
-			d=giorno;
-		}
-		else{
-			throw Invalid();
-		}
+	if( (m==Month::aprile || m==Month::giugno || m==Month::settembre || m==Month::novembre) && giorno>30){
+		throw Invalid();
 	}
-	if(m==Month::febbraio){
-		if(y%4==0){
-			if(y%100==0){
-				if(y%400==0){
-					if(giorno<=29){
-					d=giorno;
-					}
-				}
-				else{
-					if(giorno<=28){
-					d=giorno;
-					}
-				}
-			}
-			else if(giorno<=29){
-			d=giorno;
-			}
-		}
-		else if(giorno<=28){
-			d=giorno;
-		}
-		else{
-			throw Invalid();
-		}
+
+	d=giorno; // per gennaio, marzo, maggio, luglio, agosto, ottobre, dicembre ricado in casistiche che ho gia' controllato (positivo, <32)
+}
+
+bool is_leap(int y){ //controllo sulla bisestilita'
+	if(y%4==0){
+		if(y%100==0 && y%400==0){
+			return true;
+		}	
+		return true;
 	}
+	return false;
 }

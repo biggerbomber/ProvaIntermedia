@@ -6,6 +6,7 @@ class Date {
 		enum class Month{gennaio=1, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre};
 		Date();
 		Date(int, Month, int);
+		Date(const Date&);
 		
 		void setDay(int);
 		void setMonth(Month);
@@ -15,7 +16,7 @@ class Date {
 		Month getMonth(){return m;}
 		int getYear(){return y;}
 		
-		
+		Date operator=(const Date&);
 	private:
 		int y;
 		Month m;
