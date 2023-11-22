@@ -58,8 +58,6 @@ public:
 	void setCopyright(Date dataCopyright) { m_dataCopyright = dataCopyright; };
 
 
-
-
 private:
 	std::string m_ISBN {""};
 	std::string m_titolo {""};

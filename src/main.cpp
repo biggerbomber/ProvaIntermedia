@@ -36,10 +36,10 @@ int main(){
 	}
 	
 	// TESTER CLASSE BOOKSHELF
-/*
+
 	BookShelf shelf(10); 
 	shelf.push_back(mybook); 
 	shelf.pop_back(); 
-*/
+
 	return 0;
 }
