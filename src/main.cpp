@@ -37,9 +37,13 @@ int main(){
 	
 	// TESTER CLASSE BOOKSHELF
 
-	BookShelf shelf(10); 
+	std::cout << "sono qui\n";
+	BookShelf shelf(10);
+	std::cout << "sono qui1\n";
 	shelf.push_back(mybook); 
-	shelf.pop_back(); 
+	std::cout << "sono qui2\n";
+	shelf.pop_back();
+	std::cout << "sono qui3\n";
 
 	return 0;
 }
