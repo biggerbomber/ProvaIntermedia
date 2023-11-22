@@ -62,8 +62,13 @@ bool is_leap(int y){ //controllo sulla bisestilita'
 	}
 	return false;
 }
+
+std::ostream& operator<<(std::ostream& os, const Date::Month& b) {
+	return os << (int)b;
+}
+
 std::ostream& operator<<(std::ostream& os, Date& b) {
 
-	os << "data da fare";
-	return os;
+	return os <<b.getDay()<<'/'<< b.getMonth()<<'/'<<b.getYear();
 }
+

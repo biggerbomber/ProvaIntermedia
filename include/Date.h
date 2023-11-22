@@ -26,7 +26,7 @@ class Date {
 		
 		
 };
-
+std::ostream& operator<<(std::ostream& os, Date::Month& b);
 std::ostream& operator<<(std::ostream& os, Date& b);
 #endif                                        
                                                  

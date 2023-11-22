@@ -1,7 +1,7 @@
 #include "../include/BookShelf.h"
 
 BookShelf::BookShelf(int initial_capacity){
-    m_books= MyVector(initial_capacity); 
+    m_books = MyVector(initial_capacity); 
 }
 
 void BookShelf::push_back(Book element){
