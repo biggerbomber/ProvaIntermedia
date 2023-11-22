@@ -12,8 +12,10 @@ public:
 	void push_back(Book);
 	
 	Book pop_back();
+
+	~BookShelf();
 private:
-	MyVector m_books;
+	MyVector* m_books;
 };
 
 #endif

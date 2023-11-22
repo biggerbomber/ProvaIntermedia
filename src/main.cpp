@@ -13,14 +13,14 @@ int main(){
 
 	std::cout<<mybook;
 
-	mybook.presta();
+	presta(mybook);
 
 	if(mybook.disponibile()){
-		mybook.presta();
+		presta(mybook);
 	}
 	else{
 		std::cout<<"Il libro verra' restituito\n";
-		mybook.restituito();
+		restituisci(mybook);
 	}
 
 	Book b= mybook;
