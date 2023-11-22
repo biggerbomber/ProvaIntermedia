@@ -9,7 +9,7 @@ int main(){
 
 	// TESTER CLASSE BOOK
 	
-	Book mybook("David", "Foster Wallace", "Una cosa divertente che non farò mai più", "887-521-837-4");
+	Book mybook("David", "Foster Wallace", "Una cosa divertente che non faro' mai piu'", "887-521-837-4");
 
 	std::cout<<mybook;
 
