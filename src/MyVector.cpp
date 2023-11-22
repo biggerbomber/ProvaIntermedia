@@ -9,7 +9,7 @@ MyVector::MyVector(){
 MyVector::MyVector(int dim){
 	m_capacity=dim;
 	m_data= new Book [m_capacity];
-	m_size=0;
+	m_size=dim;
 }
 
 MyVector::MyVector(const MyVector& v): m_size{v.m_size} , m_capacity{v.m_capacity}, m_data{new Book[v.m_capacity]}{
@@ -64,7 +64,13 @@ void MyVector::reserve(int new_capacity){
 		m_capacity=new_capacity;
 	}
 }
+void MyVector::resize(int new_size) {
+	if (new_size > m_capacity) {
+		reserve(new_size);
+	}
+	m_size = new_size;
 
+}
 void MyVector::push_back(Book d){
 	if(m_size==m_capacity){
 		reserve(m_capacity*2);

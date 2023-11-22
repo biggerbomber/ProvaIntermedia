@@ -38,7 +38,7 @@ int main(){
 	// TESTER CLASSE BOOKSHELF
 
 	std::cout << "sono qui\n";
-	BookShelf shelf(10);
+	BookShelf shelf;
 	std::cout << "sono qui1\n";// si blocca dopo questo
 	shelf.push_back(mybook); 
 	std::cout << "sono qui2\n";//non arriva qui

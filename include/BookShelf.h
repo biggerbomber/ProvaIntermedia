@@ -7,15 +7,17 @@
 class BookShelf{
 	
 public:
+
+	BookShelf();
 	BookShelf(int);
 	
 	void push_back(Book);
 	
 	Book pop_back();
 
-	~BookShelf();
+	//~BookShelf();
 private:
-	MyVector* m_books;
+	MyVector m_books{0};
 };
 
 #endif

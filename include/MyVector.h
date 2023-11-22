@@ -20,6 +20,7 @@ public:
 	Book& at(int);
 	
 	void reserve(int);
+	void resize(int);
 
 	void push_back(Book);
 	Book pop_back();
