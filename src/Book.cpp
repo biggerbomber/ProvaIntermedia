@@ -68,19 +68,6 @@ Book& Book::operator=(Book&& other) {
 	return *this;
 }
 
-void Book::presta(){
-	if (!m_disponibile) {
-		throw std::invalid_argument("Il libro non e' disponibile!");
-	}
-	m_disponibile = false;
-}
-void Book::restituito() {
-	if (m_disponibile) {
-		throw std::invalid_argument("Il libro non e' stato prestato!");
-	}
-	m_disponibile = false;
-}
-
 void Book::setIsbn(const std::string& isbn){
 	if (!isIsbnValid(isbn)) {
 		throw std::invalid_argument("ISBN deve avere 13 caratteri");
@@ -103,4 +90,19 @@ bool operator==(Book& b1, Book&b2) {
 }
 bool operator!=(Book& b1, Book& b2) {
 	return !(b1 == b2);
+}
+
+//hf
+
+void presta(Book b){
+	if (!b.m_disponibile) {
+		throw std::invalid_argument("Il libro non e' disponibile!");
+	}
+	b.setDisponibile(true);
+}
+void restituisci(Book b) {
+	if (b.m_disponibile) {
+		throw std::invalid_argument("Il libro non e' stato prestato!");
+	}
+	b.setDisponibile(false);
 }

@@ -33,12 +33,7 @@ public:
 	Book& operator=(Book&&); //mv
 	
 	//##################FUNZIONI MEMBRO##################
-	
-	//FUNZIONI MEMBRO GENERICHE 
-	
-	void presta();
-	void restituito();
-	
+
 	//FUNZIONI DI ISPEZIONE
 	
 	std::string isbn() { return m_ISBN; };
@@ -78,4 +73,8 @@ std::ostream& operator<<(std::ostream&, Book&);
 bool operator==(Book&, Book&);
 bool operator!=(Book&, Book&);
 
+//funzioni helper generiche
+void presta(Book&);
+void restituisci(Book&);
+	
 #endif
