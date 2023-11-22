@@ -1,6 +1,6 @@
 
 #include "../include/Book.h"
-#include "../include/BookShelf.h"
+//#include "../include/BookShelf.h"
 
 #include <iostream>
 #include <string>
@@ -36,10 +36,10 @@ int main(){
 	}
 	
 	// TESTER CLASSE BOOKSHELF
-
+/*
 	BookShelf shelf(10); 
 	shelf.push_back(mybook); 
 	shelf.pop_back(); 
-
+*/
 	return 0;
 }

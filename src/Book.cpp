@@ -1,3 +1,4 @@
+
 #include "../include/Book.h"
 Book::Book(const std::string& nomeAutore, 
 		const std::string& cognomeAutore, 
@@ -67,13 +68,13 @@ Book& Book::operator=(Book&& other) {
 
 void Book::presta(){
 	if (!m_disponibile) {
-		throw std::invalid_argument("Il libro non � disponibile!");
+		throw std::invalid_argument("Il libro non e' disponibile!");
 	}
 	m_disponibile = false;
 }
 void Book::restituito() {
 	if (m_disponibile) {
-		throw std::invalid_argument("Il libro non � stato prestato!");
+		throw std::invalid_argument("Il libro non e' stato prestato!");
 	}
 	m_disponibile = false;
 }
@@ -84,3 +85,4 @@ void Book::setIbsn(const std::string& isbn){
 	}
 	m_ISBN = isbn;
 }
+
