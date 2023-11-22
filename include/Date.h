@@ -1,6 +1,6 @@
 #ifndef _DATE_H
 #define _DATE_H
-
+#include <iostream>
 bool is_leap(int);
 
 class Date {
@@ -14,11 +14,11 @@ class Date {
 		void setMonth(Month);
 		void setYear(int);
 		
-		int getDay(){return d;}
-		Month getMonth(){return m;}
-		int getYear(){return y;}
+		int getDay() const {return d;}
+		Month getMonth() const {return m;}
+		int getYear() const {return y;}
 		
-		Date operator=(const Date&);
+		Date& operator=(const Date&);
 	private:
 		int y;
 		Month m;
@@ -27,5 +27,6 @@ class Date {
 		
 };
 
+std::ostream& operator<<(std::ostream& os, Date& b);
 #endif                                        
                                                  

@@ -57,6 +57,7 @@ Book& Book::operator=(const Book& other) {
 	m_cognomeAutore = other.m_cognomeAutore;
 	m_disponibile = other.m_disponibile;
 	m_dataCopyright = other.m_dataCopyright;
+	return *this;
 }
 Book& Book::operator=(Book&& other) {
 	m_ISBN = std::move(other.m_ISBN);
@@ -64,6 +65,7 @@ Book& Book::operator=(Book&& other) {
 	m_cognomeAutore = std::move(other.m_cognomeAutore);
 	m_disponibile = other.m_disponibile;
 	m_dataCopyright = other.m_dataCopyright;
+	return *this;
 }
 
 void Book::presta(){
@@ -79,10 +81,26 @@ void Book::restituito() {
 	m_disponibile = false;
 }
 
-void Book::setIbsn(const std::string& isbn){
+void Book::setIsbn(const std::string& isbn){
 	if (!isIsbnValid(isbn)) {
 		throw std::invalid_argument("ISBN deve avere 13 caratteri");
 	}
 	m_ISBN = isbn;
 }
 
+std::ostream& operator<<(std::ostream& os, Book& b) {
+
+	os << b.titolo() << std::endl;
+	os << b.nomeAutore() << std::endl;
+	os << b.cognomeAutore() << std::endl;
+	os << b.isbn() << std::endl;
+	os << b.copyright() << std::endl;
+	return os;
+}
+
+bool operator==(Book& b1, Book&b2) {
+	return b1.isbn() == b2.isbn();
+}
+bool operator!=(Book& b1, Book& b2) {
+	return !(b1 == b2);
+}

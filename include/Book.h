@@ -23,7 +23,7 @@ public:
 	Book(Book&&); //mv
 	
 	//DISTRUTTORE
-	~Book(); //chiama i distruttori delle stringhe
+	//~Book(); //chiama i distruttori delle stringhe
 	
 	//OVERLOAD DEGLI OPERATORI
 	
@@ -41,7 +41,7 @@ public:
 	
 	//FUNZIONI DI ISPEZIONE
 	
-	std::string ibsn() { return m_ISBN; };
+	std::string isbn() { return m_ISBN; };
 	std::string titolo() { return m_titolo; };
 	std::string nomeAutore() { return m_nomeAutore; };
 	std::string cognomeAutore() { return m_cognomeAutore; };
@@ -50,7 +50,7 @@ public:
 	
 	//Funzioni di set.
 
-	void setIbsn(const std::string& isbn);
+	void setIsbn(const std::string& isbn);
 	void setTitolo(const std::string& titolo) { m_titolo=titolo; };
 	void setNomeAutore(const std::string& nomeAutore) { m_nomeAutore = nomeAutore; };
 	void setCognomeAutore(const std::string& cognomeAutore) { m_cognomeAutore=cognomeAutore; };
