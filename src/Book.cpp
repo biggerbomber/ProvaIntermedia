@@ -94,13 +94,13 @@ bool operator!=(Book& b1, Book& b2) {
 
 //hf
 
-void presta(Book b){
+void presta(Book& b){
 	if (!b.disponibile()) {
 		throw std::invalid_argument("Il libro non e' disponibile!");
 	}
 	b.setDisponibile(true);
 }
-void restituisci(Book b) {
+void restituisci(Book& b) {
 	if (b.disponibile()) {
 		throw std::invalid_argument("Il libro non e' stato prestato!");
 	}
