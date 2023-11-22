@@ -12,7 +12,8 @@ public:
 	BookShelf(int);
 	
 	void push_back(Book);
-	
+	Book BookShelf::operator[](int a) const;
+	Book& BookShelf::operator[](int a);
 	Book pop_back();
 
 	//~BookShelf();

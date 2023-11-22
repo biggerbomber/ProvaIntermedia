@@ -25,9 +25,6 @@ Date& Date::operator=(const Date& other) {
 	return *this;
 }
 void Date::setYear(int anno){
-	if (anno < -1400 || anno>= 2023) throw Invalid{};
-	//scelta progettuale accetto gli anni negativi e "pubblicare nel futuro non e' consentito"
-	
 	y=anno;
 }
 

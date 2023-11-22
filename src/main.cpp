@@ -13,14 +13,14 @@ int main(){
 
 	std::cout<<mybook;
 
-	presta(mybook);
+	BookLib::presta(mybook);
 
 	if(mybook.disponibile()){
-		presta(mybook);
+		BookLib::presta(mybook);
 	}
 	else{
 		std::cout<<"Il libro verra' restituito\n";
-		restituisci(mybook);
+		BookLib::restituisci(mybook);
 	}
 
 	Book b= mybook;
@@ -44,6 +44,12 @@ int main(){
 	std::cout << "sono qui2\n";//non arriva qui
 	shelf.pop_back();
 	std::cout << "sono qui3\n";
+
+	BookShelf ts(10);
+
+	ts[0]= Book("David", "Foster Wallace", "Una cosa divertente che non faro' mai piu'", "887-521-837-4");
+	ts[2] = Book("David", "Foster Wallace", "Una cosa divertente che non faro' mai piu'", "887-521-837-4", Date(2024, Date::Month::luglio, 13));
+	std::cout << ts[0] << ts[2];
 
 	return 0;
 }

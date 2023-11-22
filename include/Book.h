@@ -72,9 +72,11 @@ std::ostream& operator<<(std::ostream&, Book&);
 
 bool operator==(Book&, Book&);
 bool operator!=(Book&, Book&);
-
 //funzioni helper generiche
-void presta(Book&);
-void restituisci(Book&);
+namespace BookLib {
+	void presta(Book&);
+	void restituisci(Book&);
+}
+
 	
 #endif

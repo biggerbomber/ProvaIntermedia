@@ -41,6 +41,7 @@ Book::Book(const Book& other) {
 	m_ISBN = other.m_ISBN;
 	m_nomeAutore = other.m_nomeAutore;
 	m_cognomeAutore = other.m_cognomeAutore;
+	m_titolo = other.m_titolo;
 	m_disponibile = other.m_disponibile;
 	m_dataCopyright = other.m_dataCopyright;
 }
@@ -48,6 +49,7 @@ Book::Book(Book&& other) {
 	m_ISBN = std::move(other.m_ISBN);
 	m_nomeAutore = std::move(other.m_nomeAutore);
 	m_cognomeAutore = std::move(other.m_cognomeAutore);
+	m_titolo = std::move(other.m_titolo);
 	m_disponibile = other.m_disponibile;
 	m_dataCopyright = other.m_dataCopyright;
 }
@@ -55,6 +57,7 @@ Book& Book::operator=(const Book& other) {
 	m_ISBN = other.m_ISBN;
 	m_nomeAutore = other.m_nomeAutore;
 	m_cognomeAutore = other.m_cognomeAutore;
+	m_titolo = other.m_titolo;
 	m_disponibile = other.m_disponibile;
 	m_dataCopyright = other.m_dataCopyright;
 	return *this;
@@ -63,6 +66,7 @@ Book& Book::operator=(Book&& other) {
 	m_ISBN = std::move(other.m_ISBN);
 	m_nomeAutore = std::move(other.m_nomeAutore);
 	m_cognomeAutore = std::move(other.m_cognomeAutore);
+	m_titolo = std::move(other.m_titolo);
 	m_disponibile = other.m_disponibile;
 	m_dataCopyright = other.m_dataCopyright;
 	return *this;
@@ -94,13 +98,13 @@ bool operator!=(Book& b1, Book& b2) {
 
 //hf
 
-void presta(Book& b){
+void BookLib::presta(Book& b){
 	if (!b.disponibile()) {
 		throw std::invalid_argument("Il libro non e' disponibile!");
 	}
 	b.setDisponibile(true);
 }
-void restituisci(Book& b) {
+void BookLib::restituisci(Book& b) {
 	if (b.disponibile()) {
 		throw std::invalid_argument("Il libro non e' stato prestato!");
 	}
