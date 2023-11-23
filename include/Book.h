@@ -32,9 +32,9 @@ public:
 	
 	Book& operator=(Book&&); //mv
 	
-	//##################FUNZIONI MEMBRO##################
+	//##################METODI MEMBRO##################
 
-	//FUNZIONI DI ISPEZIONE
+	//METODI DI ISPEZIONE
 	
 	std::string isbn() { return m_ISBN; };
 	std::string titolo() { return m_titolo; };
@@ -43,7 +43,7 @@ public:
 	bool disponibile() { return m_disponibile; };
 	Date copyright() { return m_dataCopyright; };
 	
-	//Funzioni di set.
+	//Metodi di set.
 
 	void setIsbn(const std::string& isbn);
 	void setTitolo(const std::string& titolo) { m_titolo=titolo; };
@@ -54,6 +54,8 @@ public:
 
 
 private:
+	//Metodi di get.
+
 	std::string m_ISBN {""};
 	std::string m_titolo {""};
 	std::string m_nomeAutore {""};
@@ -72,7 +74,7 @@ std::ostream& operator<<(std::ostream&, Book&);
 
 bool operator==(Book&, Book&);
 bool operator!=(Book&, Book&);
-//funzioni helper generiche
+//Metodi helper generiche
 namespace BookLib {
 	void presta(Book&);
 	void restituisci(Book&);
