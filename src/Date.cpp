@@ -13,11 +13,7 @@ Date::Date(int anno, Month mese, int giorno){
 	setMonth(mese);
 	setDay(giorno);
 }
-Date::Date(const Date& other) {
-	y = other.getYear();
-	m = other.getMonth();
-	d = other.getDay();
-}
+
 Date& Date::operator=(const Date& other) {
 	y = other.getYear();
 	m = other.getMonth();

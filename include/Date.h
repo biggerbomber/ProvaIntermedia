@@ -1,6 +1,7 @@
 #ifndef _DATE_H
 #define _DATE_H
 #include <iostream>
+
 bool is_leap(int);
 
 class Date {
@@ -8,7 +9,7 @@ class Date {
 		enum class Month{gennaio=1, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre};
 		Date();
 		Date(int, Month, int);
-		Date(const Date&);
+		Date(const Date&) = default;
 		
 		void setDay(int);
 		void setMonth(Month);
