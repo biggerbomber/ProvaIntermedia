@@ -11,12 +11,12 @@ public:
 	BookShelf();
 	BookShelf(int);
 	
-	void push_back(Book);
+	void push_back(const Book&);
 	Book BookShelf::operator[](int a) const;
 	Book& BookShelf::operator[](int a);
-	Book pop_back();
+	Book&& pop_back();
 
-	//~BookShelf();
+	~BookShelf() = default;
 private:
 	MyVector m_books{0};
 };

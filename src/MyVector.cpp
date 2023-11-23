@@ -12,7 +12,8 @@ MyVector::MyVector(int dim){
 	m_size=dim;
 }
 
-MyVector::MyVector(const MyVector& v): m_size{v.m_size} , m_capacity{v.m_capacity}, m_data{new Book[v.m_capacity]}{
+MyVector::MyVector(const MyVector& v): 
+	m_size{v.m_size} , m_capacity{v.m_capacity}, m_data{new Book[v.m_capacity]}{
 	std::copy(v.m_data,v.m_data+v.m_size,m_data);
 }
 
@@ -72,7 +73,7 @@ void MyVector::resize(int new_size) {
 		m_size = new_size;
 	}
 }
-void MyVector::push_back(Book d){
+void MyVector::push_back(const Book& d){
 	if(m_size==m_capacity){
 		reserve(m_capacity*2);
 	}
@@ -80,12 +81,12 @@ void MyVector::push_back(Book d){
 	m_size++;
 }
 
-Book MyVector::pop_back(){
+Book&& MyVector::pop_back(){
 	if(m_size<=0){
 		throw std::out_of_range("Vettore vuoto");
 	}
 	m_size=m_size-1;
-	return m_data[m_size];
+	return std::move(m_data[m_size]);
 }
 std::ostream& operator<<(std::ostream& os, MyVector& v){
     for(int i=0;i<v.size();i++){

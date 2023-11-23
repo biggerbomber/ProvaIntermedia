@@ -13,11 +13,11 @@ Book BookShelf::operator[](int a) const {
 Book& BookShelf::operator[](int a) {
     return m_books[a];
 }
-void BookShelf::push_back(Book element){
+void BookShelf::push_back(const Book& element){
     m_books.push_back(element);
 }
 
-Book BookShelf::pop_back(){
+Book&& BookShelf::pop_back(){
     return m_books.pop_back();
 }
 
