@@ -68,8 +68,9 @@ void MyVector::resize(int new_size) {
 	if (new_size > m_capacity) {
 		reserve(new_size);
 	}
-	m_size = new_size;
-
+	if (new_size >= 0) {
+		m_size = new_size;
+	}
 }
 void MyVector::push_back(Book d){
 	if(m_size==m_capacity){
@@ -81,8 +82,7 @@ void MyVector::push_back(Book d){
 
 Book MyVector::pop_back(){
 	if(m_size<=0){
-		std::cout<<"Vettore vuoto\n";
-		throw std::out_of_range("");
+		throw std::out_of_range("Vettore vuoto");
 	}
 	m_size=m_size-1;
 	return m_data[m_size];
