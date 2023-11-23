@@ -11,7 +11,7 @@ int main(){
 	
 	Book mybook("David", "Foster Wallace", "Una cosa divertente che non faro' mai piu'", "887-521-837-4");
 
-	std::cout<<mybook;
+	std::cout<<mybook<<std::endl;
 
 	BookLib::presta(mybook);
 
@@ -42,7 +42,7 @@ int main(){
 	std::cout << "sono qui1\n";// si blocca dopo questo
 	shelf.push_back(mybook); 
 	std::cout << "sono qui2\n";//non arriva qui
-	shelf.pop_back();
+	std::cout<<shelf.pop_back()<<std::endl;
 	std::cout << "sono qui3\n";
 
 	BookShelf ts(10);

@@ -1,7 +1,5 @@
 #include "../include/Date.h"
 
-class Invalid{};
-
 Date::Date(){
 	y=2023;
 	m=Month::gennaio;
@@ -30,14 +28,14 @@ void Date::setMonth(Month mese){
 
 void Date::setDay(int giorno){
 	if(giorno<0 || giorno>31){
-		throw Invalid();
+		throw std::out_of_range("Giorno non valido");
 	}
 	if(m==Month::febbraio && ((giorno>29)||(giorno>28 && !is_leap(y)))){
-			throw Invalid();
+		throw std::out_of_range("Giorno non valido");
 	}
 	
 	if( (m==Month::aprile || m==Month::giugno || m==Month::settembre || m==Month::novembre) && giorno>30){
-		throw Invalid();
+		throw std::out_of_range("Giorno non valido");
 	}
 
 	d=giorno; // per gennaio, marzo, maggio, luglio, agosto, ottobre, dicembre ricado in casistiche che ho gia' controllato (positivo, <32)

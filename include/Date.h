@@ -6,7 +6,8 @@ bool is_leap(int);
 
 class Date {
 	public:
-		enum class Month{gennaio=1, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre};
+		enum class Month{gennaio=1, febbraio, marzo, aprile, maggio, giugno,
+						 luglio, agosto, settembre, ottobre, novembre, dicembre};
 		Date();
 		Date(int, Month, int);
 		Date(const Date&) = default;

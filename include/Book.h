@@ -14,16 +14,18 @@ public:
 	//Book(); //default
 	//Book(const std::string&); //ibsn
 	//Book(const std::string&, const std::string&); //titolo, ibsn
-	Book();
-	Book(const std::string&, const std::string&, const std::string&, const std::string&);//nome, cognome, titolo, ibsn
-	Book(const std::string&, const std::string&, const std::string&, const std::string&, Date);//nome, cognome, titolo, ibsn, copyright
+	Book() = default;
+	Book(const std::string&, const std::string&,
+		 const std::string&, const std::string&);//nome, cognome, titolo, ibsn
+	Book(const std::string&, const std::string&,
+		 const std::string&, const std::string&, Date);//nome, cognome, titolo, ibsn, copyright
 	
 	// MV/CPY CONSTR
 	Book(const Book&); //cpy
 	Book(Book&&); //mv
 	
 	//DISTRUTTORE
-	//~Book(); //chiama i distruttori delle stringhe
+	~Book() = default; //chiama i distruttori delle stringhe
 	
 	//OVERLOAD DEGLI OPERATORI
 	
@@ -36,12 +38,12 @@ public:
 
 	//METODI DI ISPEZIONE
 	
-	std::string isbn() { return m_ISBN; };
-	std::string titolo() { return m_titolo; };
-	std::string nomeAutore() { return m_nomeAutore; };
-	std::string cognomeAutore() { return m_cognomeAutore; };
-	bool disponibile() { return m_disponibile; };
-	Date copyright() { return m_dataCopyright; };
+	std::string isbn() const { return m_ISBN; };
+	std::string titolo() const { return m_titolo; };
+	std::string nomeAutore() const { return m_nomeAutore; };
+	std::string cognomeAutore() const { return m_cognomeAutore; };
+	bool disponibile() const { return m_disponibile; };
+	Date copyright() const { return m_dataCopyright; };
 	
 	//Metodi di set.
 
@@ -63,7 +65,6 @@ private:
 	bool m_disponibile {false};
 	Date m_dataCopyright;
 
-	bool isIsbnValid(const std::string&);
 
 };
 
@@ -78,6 +79,7 @@ bool operator!=(Book&, Book&);
 namespace BookLib {
 	void presta(Book&);
 	void restituisci(Book&);
+	bool isIsbnValid(const std::string&);
 }
 
 	

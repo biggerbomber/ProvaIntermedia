@@ -1,11 +1,11 @@
 
 #include "../include/Book.h"
 Book::Book(const std::string& nomeAutore, 
-		const std::string& cognomeAutore, 
-		const std::string& titolo, 
-		const std::string& isbn) {
+		   const std::string& cognomeAutore, 
+		   const std::string& titolo, 
+		   const std::string& isbn) {
 
-	if (!isIsbnValid(isbn)) {
+	if (!BookLib::isIsbnValid(isbn)) {
 		throw std::invalid_argument("ISBN deve avere 13 caratteri");
 	}
 	m_ISBN = isbn;
@@ -15,18 +15,14 @@ Book::Book(const std::string& nomeAutore,
 	m_disponibile = true;
 }
 
-Book::Book(){}//non fa nulla i dati sono inizializzati ai valori di default definiti nel file helper
 
-bool Book::isIsbnValid(const std::string& isbn) {
-	return isbn.size() == 13;
-}
 Book::Book(const std::string& nomeAutore,
-	const std::string& cognomeAutore,
-	const std::string& titolo,
-	const std::string& isbn,
-	Date dataCopyright ) {
+		   const std::string& cognomeAutore,
+		   const std::string& titolo,
+		   const std::string& isbn,
+		   Date dataCopyright ) {
 
-	if (!isIsbnValid(isbn)) {
+	if (!BookLib::isIsbnValid(isbn)) {
 		throw std::invalid_argument("ISBN deve avere 13 caratteri");
 	}
 	m_ISBN = isbn;
@@ -63,6 +59,7 @@ Book& Book::operator=(const Book& other) {
 	return *this;
 }
 Book& Book::operator=(Book&& other) {
+
 	m_ISBN = std::move(other.m_ISBN);
 	m_nomeAutore = std::move(other.m_nomeAutore);
 	m_cognomeAutore = std::move(other.m_cognomeAutore);
@@ -73,19 +70,18 @@ Book& Book::operator=(Book&& other) {
 }
 
 void Book::setIsbn(const std::string& isbn){
-	if (!isIsbnValid(isbn)) {
+	if (!BookLib::isIsbnValid(isbn)) {
 		throw std::invalid_argument("ISBN deve avere 13 caratteri");
 	}
 	m_ISBN = isbn;
 }
 
 std::ostream& operator<<(std::ostream& os, Book& b) {
-
 	os << b.titolo() << std::endl;
 	os << b.nomeAutore() << std::endl;
 	os << b.cognomeAutore() << std::endl;
 	os << b.isbn() << std::endl;
-	os << b.copyright() << std::endl;
+	os << b.copyright();
 	return os;
 }
 
@@ -109,4 +105,7 @@ void BookLib::restituisci(Book& b) {
 		throw std::invalid_argument("Il libro non e' stato prestato!");
 	}
 	b.setDisponibile(false);
+}
+bool BookLib::isIsbnValid(const std::string& isbn) {
+	return isbn.size() == 13;
 }

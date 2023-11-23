@@ -22,10 +22,10 @@ public:
 	void reserve(int);
 	void resize(int);
 
-	void push_back(Book);
-	Book pop_back();
+	void push_back(const Book&);
+	Book&& pop_back();
 	
-	int size() {return m_size;}//inline
+	int size() const{return m_size;}//inline
 	Book* get_pointer(){return m_data;}
   
 	
