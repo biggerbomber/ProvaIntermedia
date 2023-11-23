@@ -39,9 +39,9 @@ int main(){
 
 	std::cout << "sono qui\n";
 	BookShelf shelf;
-	std::cout << "sono qui1\n";// si blocca dopo questo
+	std::cout << "sono qui1\n";
 	shelf.push_back(mybook); 
-	std::cout << "sono qui2\n";//non arriva qui
+	std::cout << "sono qui2\n";
 	std::cout<<shelf.pop_back()<<std::endl;
 	std::cout << "sono qui3\n";
 

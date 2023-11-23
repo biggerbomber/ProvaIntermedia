@@ -20,7 +20,3 @@ void BookShelf::push_back(const Book& element){
 Book&& BookShelf::pop_back(){
     return m_books.pop_back();
 }
-
-/*BookShelf::~BookShelf() {
-    delete m_books;
-}*/
