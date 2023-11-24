@@ -28,7 +28,6 @@ public:
 	//OVERLOAD DEGLI OPERATORI
 	
 	Book& operator=(const Book&); //cpy
-	//Book& operator=(const Book&) const;  //cpy ERRORE
 	
 	Book& operator=(Book&&); //mv
 	
