@@ -61,9 +61,7 @@ private:
 	std::string m_nomeAutore {""};
 	std::string m_cognomeAutore {""};
 	bool m_disponibile {false};
-	Date m_dataCopyright;
-
-
+	Date m_dataCopyright{1970,Date::Month::gennaio,1};
 };
 
 //overload per ostream

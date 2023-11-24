@@ -1,9 +1,6 @@
 #include "../include/Date.h"
 
-Date::Date(){
-	y=2023;
-	m=Month::gennaio;
-	d=20;
+Date::Date(){//Data di default
 }
 
 Date::Date(int anno, Month mese, int giorno){
