@@ -11,9 +11,7 @@ class Book{
 public:
 	
 	//COSTRUTTORI
-	//Book(); //default
-	//Book(const std::string&); //ibsn
-	//Book(const std::string&, const std::string&); //titolo, ibsn
+	
 	Book() = default;
 	Book(const std::string&, const std::string&,
 		 const std::string&, const std::string&);//nome, cognome, titolo, ibsn
@@ -56,7 +54,7 @@ public:
 
 
 private:
-	//Metodi di get.
+	
 
 	std::string m_ISBN {""};
 	std::string m_titolo {""};
