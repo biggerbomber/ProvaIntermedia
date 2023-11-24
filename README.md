@@ -1,6 +1,5 @@
-# ProvaIntermedia
+# ProvaIntermedia 23/24
 
-## BiggerBomber è un gran pela patate
-Prova intermedia lab programmazione barbato,casucci,pinton
 
-# Mr casucci è tanto surgo e frocio
+Prova intermedia lab programmazione Barbato,Casucci,Pinton
+
