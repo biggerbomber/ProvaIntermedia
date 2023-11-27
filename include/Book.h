@@ -64,7 +64,7 @@ private:
 };
 
 //overload per ostream
-std::ostream& operator<<(std::ostream&, Book&);
+std::ostream& operator<<(std::ostream&, const Book&);
 
 //overload operatori
 

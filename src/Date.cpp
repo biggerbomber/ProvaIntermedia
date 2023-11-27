@@ -55,7 +55,7 @@ std::ostream& operator<<(std::ostream& os, const Date::Month& b) {
 	return os << (int)b;
 }
 
-std::ostream& operator<<(std::ostream& os, Date& b) {
+std::ostream& operator<<(std::ostream& os, const Date& b) {
 
 	return os <<b.getDay()<<'/'<< b.getMonth()<<'/'<<b.getYear();
 }

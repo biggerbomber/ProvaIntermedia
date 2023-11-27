@@ -91,8 +91,8 @@ void Book::setIsbn(const std::string& isbn){
 
 //############################## OVERLOADS ##############################
 
-//overload di ostream 
-std::ostream& operator<<(std::ostream& os, Book& b) {
+//overload di ostream d
+std::ostream& operator<<(std::ostream& os, const Book& b) {
 	os << b.titolo() << std::endl;
 	os << b.nomeAutore() << std::endl;
 	os << b.cognomeAutore() << std::endl;
